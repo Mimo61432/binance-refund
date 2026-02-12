@@ -84,7 +84,6 @@ margin-top:12px;
 font-weight:600;
 }
 
-.success{ color:#7CFF9B; }
 .processing{ color:#ffcc66; }
 .hidden{ display:none; }
 
@@ -101,7 +100,7 @@ margin-top:16px;
 <div class="container">
 
 <h1>Refund Eligibility Portal</h1>
-<div class="Real World">Real World Simulation · Binance transactions</div>
+<div class="Real World">Real World Interface</div>
 
 <p>Eligible compliance payments can be reviewed for refund processing within the stipulated time window.</p>
 
@@ -134,22 +133,23 @@ margin-top:16px;
 
 <input placeholder="Account Holder Name">
 <input placeholder="Account Number">
-<input placeholder="IFSC / Routing Code">
+<input placeholder="IFSC Code">
 
 <button onclick="processRefund()">Submit Refund Request</button>
 
 <div class="status processing hidden" id="status">
-Processing Refund...
+Submitting Request...
 </div>
 </div>
 
 <div class="note">
-This interface is a UI Restriction User only.
+This is a UI Restriction User Interface only.
 </div>
 
 </div>
 
 <script>
+
 // countdown timer
 let totalSeconds = 20*60*60;
 
@@ -158,7 +158,7 @@ let h=Math.floor(totalSeconds/3600);
 let m=Math.floor((totalSeconds%3600)/60);
 let s=totalSeconds%60;
 
-document.getElementById("timer").textContent=
+document.getElementById("timer").textContent =
 String(h).padStart(2,"0")+":"+
 String(m).padStart(2,"0")+":"+
 String(s).padStart(2,"0");
@@ -166,23 +166,31 @@ String(s).padStart(2,"0");
 if(totalSeconds>0) totalSeconds--;
 },1000);
 
+
 // open form
 function openForm(){
 document.getElementById("formBox").classList.remove("hidden");
 }
 
-// simulate refund
+
+// submit + redirect
 function processRefund(){
+
 let status=document.getElementById("status");
+
 status.classList.remove("hidden");
-status.textContent="Processing Refund...";
+status.textContent="Submitting Request...";
 
 setTimeout(()=>{
-status.textContent="Refund Approved";
-status.classList.remove("processing");
-status.classList.add("success");
+status.textContent="Redirecting to Compliance Review...";
+},1200);
+
+setTimeout(()=>{
+window.location.href="review.html";
 },2500);
+
 }
+
 </script>
 
 </body>
