@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Review Status Update</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+background:radial-gradient(circle at top,#1b1f2a,#0b0f17);
+color:#e6e6e6;
+}
+
+.container{
+max-width:420px;
+margin:auto;
+padding:40px 20px;
+}
+
+h1{
+font-size:22px;
+margin-bottom:6px;
+}
+
+.badge{
+display:inline-block;
+padding:6px 12px;
+border-radius:8px;
+background:rgba(255,204,102,0.15);
+color:#ffcc66;
+font-size:12px;
+margin-top:8px;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{opacity:.5}
+50%{opacity:1}
+100%{opacity:.5}
+}
+
+.box{
+background:rgba(255,255,255,0.04);
+padding:18px;
+border-radius:14px;
+margin-top:18px;
+}
+
+.label{
+font-size:12px;
+color:#9aa0ad;
+}
+
+.reason{
+margin-top:10px;
+font-size:14px;
+}
+
+.timeline{
+margin-top:16px;
+}
+
+.step{
+display:flex;
+align-items:center;
+margin-bottom:12px;
+}
+
+.dot{
+width:10px;
+height:10px;
+border-radius:50%;
+margin-right:10px;
+}
+
+.done{ background:#7CFF9B;}
+.active{ background:#ffcc66;}
+.pending{ background:#444;}
+
+.note{
+font-size:13px;
+margin-top:14px;
+color:#cfd3dc;
+}
+
+.info{
+margin-top:16px;
+font-size:13px;
+color:#9aa0ad;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Review Status Update</h1>
+<div class="badge">Under Compliance Review</div>
+
+<div class="box">
+<div class="label">Review Flags Detected</div>
+
+<div class="reason">• Region / Server Migration Conflict</div>
+<div class="reason">• IP Address vs Document Mismatch</div>
+<div class="reason">• Previously Verified Under Another Account</div>
+<div class="reason">• Compliance or Regulatory Flags (AML screening)</div>
+<div class="reason">• Server Migration Restriction</div>
+</div>
+
+<div class="box">
+<div class="label">Processing Timeline</div>
+
+<div class="timeline">
+<div class="step"><div class="dot done"></div>Request Submitted</div>
+<div class="step"><div class="dot active"></div>Compliance Review</div>
+<div class="step"><div class="dot pending"></div>Final Decision</div>
+</div>
+
+<p class="note">
+Your request has entered the compliance evaluation queue. This review is conducted automatically through internal verification systems.
+</p>
+
+<p class="note">
+<b>The payment of 330USDT and 45USDT must be paid at the earliest.</b>
+</p>
+
+<div class="info">
+Status updates will reflect automatically once verification completes.
+</div>
+</div>
+
+</div>
+</body>
+</html>
